@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'test';
+  title = 'Hello ';
+  onSubmit(num1:string,num2:string){
+    var addnum= parseInt(num1) + parseInt(num2)
+console.log("addnum=",addnum)
+  }
 }
