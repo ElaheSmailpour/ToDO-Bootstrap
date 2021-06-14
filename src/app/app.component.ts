@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import {Model, TodoItem} from '../models/model'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,8 +7,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Hello ';
-  onSubmit(num1:string,num2:string){
-    var addnum= parseInt(num1) + parseInt(num2)
-console.log("addnum=",addnum)
-  }
+ model = new Model()
+ getName(){
+   return this.model.user
+ }
+ getTodoItems(){
+   return this.model.items
+ }
+ addItem(newTask:any){
+if(newTask != ""){
+  this.model.items.push(new TodoItem(newTask,false))
+
+}
+ }
 }
